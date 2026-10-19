@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Alok Kumar - Junior Design Engineer Resume</title>
+<style>
+  @page {
+    size: A4;
+    margin: 0;
+  }
+  * {
+    box-sizing: border-box;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+  body {
+    font-family: 'Segoe UI', 'Calibri', 'Helvetica Neue', Arial, sans-serif;
+    background-color: #e2e8f0;
+    margin: 0;
+    padding: 20px 0;
+    color: #1e293b;
+  }
+  .print-bar {
+    max-width: 210mm;
+    margin: 0 auto 15px auto;
+    background: #0f172a;
+    color: #fff;
+    padding: 10px 18px;
+    border-radius: 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+  }
+  .print-btn {
+    background: #2563eb;
+    color: #ffffff;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    font-size: 13px;
+  }
+  .print-btn:hover {
+    background: #1d4ed8;
+  }
+  .page {
+    width: 210mm;
+    min-height: 297mm;
+    max-height: 297mm;
+    margin: 0 auto;
+    background: #ffffff;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.12);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+  }
+  /* Header */
+  .header {
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 24px 34px 20px 34px;
+    border-bottom: 4px solid #3b82f6;
+  }
+  .name {
+    font-size: 24pt;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin: 0;
+    line-height: 1.1;
+  }
+  .role-title {
+    font-size: 11.5pt;
+    color: #93c5fd;
+    font-weight: 600;
+    margin: 4px 0 10px 0;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+  .contact-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 9.5pt;
+    color: #e2e8f0;
+    border-top: 1px solid rgba(255,255,255,0.2);
+    padding-top: 8px;
+  }
+  /* Main Content */
+  .content {
+    padding: 18px 34px 22px 34px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  .section {
+    margin-bottom: 12px;
+  }
+  .section-title {
+    font-size: 10.5pt;
+    font-weight: 800;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    letter-spacing: 0.8px;
+    border-bottom: 2px solid #cbd5e1;
+    padding-bottom: 3px;
+    margin: 0 0 8px 0;
+    display: flex;
+    align-items: center;
+  }
+  .summary-text {
+    font-size: 9.8pt;
+    line-height: 1.48;
+    color: #334155;
+    margin: 0;
+    text-align: justify;
+  }
+  /* Skill Pills */
+  .skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+  .skill-box {
+    background: #f8fafc;
+    border-left: 3px solid #2563eb;
+    padding: 6px 10px;
+    border-radius: 0 4px 4px 0;
+  }
+  .skill-cat {
+    font-size: 8.5pt;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #1e3a8a;
+    margin-bottom: 2px;
+  }
+  .skill-list {
+    font-size: 9.2pt;
+    color: #334155;
+    line-height: 1.35;
+  }
+  /* Experience */
+  .exp-item {
+    margin-bottom: 10px;
+  }
+  .exp-item:last-child {
+    margin-bottom: 0;
+  }
+  .exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+  .job-title {
+    font-size: 10.5pt;
+    font-weight: 700;
+    color: #0f172a;
+  }
+  .job-date {
+    font-size: 9pt;
+    font-weight: 700;
+    color: #1e3a8a;
+    background: #dbeafe;
+    padding: 2px 8px;
+    border-radius: 12px;
+  }
+  .company-name {
+    font-size: 9.5pt;
+    font-weight: 600;
+    color: #475569;
+    margin: 1px 0 4px 0;
+  }
+  ul.bullets {
+    margin: 3px 0 0 16px;
+    padding: 0;
+    font-size: 9.4pt;
+    line-height: 1.42;
+    color: #334155;
+  }
+  ul.bullets li {
+    margin-bottom: 2.5px;
+  }
+  /* Education Grid */
+  .edu-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 16px;
+  }
+  .edu-card {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 5px;
+    padding: 7px 10px;
+  }
+  .edu-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    font-weight: 700;
+    font-size: 9.6pt;
+    color: #0f172a;
+  }
+  .edu-year {
+    font-size: 8.5pt;
+    color: #2563eb;
+    font-weight: 700;
+  }
+  .edu-inst {
+    font-size: 8.8pt;
+    color: #475569;
+    font-weight: 600;
+    margin: 2px 0;
+  }
+  .edu-sub {
+    font-size: 8.4pt;
+    color: #64748b;
+    line-height: 1.3;
+  }
+  /* Footer / Personal Details */
+  .personal-strip {
+    background: #f1f5f9;
+    border-radius: 5px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 9pt;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+  }
+  @media print {
+    body {
+      background: none;
+      padding: 0;
+    }
+    .print-bar {
+      display: none !important;
+    }
+    .page {
+      box-shadow: none;
+      margin: 0;
+      width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <span><strong>HR-Ready 1-Page Resume</strong> — In the print window, set Destination to <strong>"Save as PDF"</strong> and uncheck "Headers and footers".</span>
+    <button class="print-btn" onclick="window.print()">Download / Save as PDF</button>
+  </div>
+
+  <div class="page">
+    <!-- HEADER -->
+    <div class="header">
+      <h1 class="name">Alok Kumar</h1>
+      <div class="role-title">Junior Design Engineer &nbsp;|&nbsp; Mechanical CAD &amp; Drafting Specialist</div>
+      <div class="contact-bar">
+        <span>&#128205; New Delhi, India</span>
+        <span>&#128222; +91 8851993953</span>
+        <span>&#9993; ak7247410@gmail.com</span>
+      </div>
+    </div>
+
+    <div class="content">
+      <!-- SUMMARY -->
+      <div class="section">
+        <h2 class="section-title">Professional Profile</h2>
+        <p class="summary-text">
+          Results-driven <strong>Junior Design Engineer</strong> holding a Diploma in Mechanical Engineering and ITI Fitter certification, with practical industry experience in 2D production drafting, metal forging layouts, and hydraulic/pneumatic component design. Highly proficient in <strong>AutoCAD</strong> and <strong>SolidWorks</strong>, combining shop-floor manufacturing knowledge with precision engineering drawing and workshop calculations to deliver accurate, production-ready designs.
+        </p>
+      </div>
+
+      <!-- TECHNICAL SKILLS -->
+      <div class="section">
+        <h2 class="section-title">Core Technical Competencies</h2>
+        <div class="skills-container">
+          <div class="skill-box">
+            <div class="skill-cat">CAD &amp; Design Software</div>
+            <div class="skill-list">AutoCAD (2D Drafting &amp; Detailing), SolidWorks (3D Part Modeling &amp; Assembly), Engineering Blueprints</div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-cat">Mechanical &amp; Domain Knowledge</div>
+            <div class="skill-list">Manufacturing Engineering, Material Engineering, Thermodynamics, Mechatronics, Forging &amp; Hydraulic Layouts</div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-cat">Shop-Floor &amp; Trade Skills</div>
+            <div class="skill-list">ITI Fitter Operations, Dimensional Tolerance Verification, Workshop Calculation &amp; Science</div>
+          </div>
+          <div class="skill-box">
+            <div class="skill-cat">IT &amp; Professional Skills</div>
+            <div class="skill-list">Computer Applications, Web Applications, Information Technology, Cross-Team Collaboration, Time Management</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- WORK EXPERIENCE -->
+      <div class="section">
+        <h2 class="section-title">Professional Experience</h2>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="job-title">Junior Design Engineer (AutoCAD)</span>
+            <span class="job-date">Feb 2026 – Present</span>
+          </div>
+          <div class="company-name">Hydraulic &amp; Pneumatic Products — Delhi, India</div>
+          <ul class="bullets">
+            <li>Create detailed 2D manufacturing drawings, assembly layouts, and component schematics for hydraulic and pneumatic product lines using AutoCAD.</li>
+            <li>Assist senior design engineers in revising technical specifications and building 3D mechanical component models in SolidWorks.</li>
+            <li>Coordinate directly with fabrication and workshop teams to verify tolerances, resolve shop-floor design queries, and ensure on-time production delivery.</li>
+          </ul>
+        </div>
+
+        <div class="exp-item">
+          <div class="exp-header">
+            <span class="job-title">Junior Design Engineer (AutoCAD)</span>
+            <span class="job-date">Aug 2025 – Feb 2026</span>
+          </div>
+          <div class="company-name">Metal Forgings Private Limited — Delhi, India</div>
+          <ul class="bullets">
+            <li>Drafted precision 2D forging drawings, die layouts, and machining allowance specifications for industrial metal components using AutoCAD.</li>
+            <li>Applied engineering drawing standards and workshop calculations to maintain strict dimensional accuracy across manufacturing batches.</li>
+            <li>Collaborated with quality assurance and production engineers to update CAD revisions and streamline component manufacturing workflows.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- EDUCATION -->
+      <div class="section">
+        <h2 class="section-title">Academic &amp; Technical Education</h2>
+        <div class="edu-grid">
+          <div class="edu-card">
+            <div class="edu-top">
+              <span>Diploma in Mechanical Engineering</span>
+              <span class="edu-year">2023 – 2025</span>
+            </div>
+            <div class="edu-inst">Pusa Institute of Technology — New Delhi</div>
+            <div class="edu-sub"><strong>Key Subjects:</strong> Material Engineering, Thermodynamics, Manufacturing Engineering, Mechatronics</div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-top">
+              <span>ITI in Fitter Trade</span>
+              <span class="edu-year">2021 – 2023</span>
+            </div>
+            <div class="edu-inst">ITI Jail Road — New Delhi</div>
+            <div class="edu-sub"><strong>Coursework:</strong> Trade Theory &amp; Practical, Engineering Drawing, Workshop Calculation</div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-top">
+              <span>12th Higher Secondary Certificate</span>
+              <span class="edu-year">2019 – 2020</span>
+            </div>
+            <div class="edu-inst">Sarvodaya Bal Vidyalaya — Delhi</div>
+            <div class="edu-sub"><strong>Subjects:</strong> English, Hindi, Political Science, Geography, Economics, Web Application</div>
+          </div>
+
+          <div class="edu-card">
+            <div class="edu-top">
+              <span>10th Secondary School Certificate</span>
+              <span class="edu-year">2016 – 2017</span>
+            </div>
+            <div class="edu-inst">Sarvodaya Bal Vidyalaya — Delhi</div>
+            <div class="edu-sub"><strong>Subjects:</strong> English, Hindi, Maths, Science, Social Science, Information Technology</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- PERSONAL DETAILS -->
+      <div class="section" style="margin-bottom: 0;">
+        <h2 class="section-title">Personal Details</h2>
+        <div class="personal-strip">
+          <span><strong>Father's Name:</strong> Shyam Singh</span>
+          <span><strong>Date of Birth:</strong> 28 July 2000</span>
+          <span><strong>Address:</strong> RZ-D2, Gali No. 11, Durga Park, New Delhi – 110045</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
